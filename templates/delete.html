@@ -1,0 +1,15 @@
+
+{% extends "base.html" %}  
+{% load static %}
+
+{% block body %}
+<h1>Delete Movie</h1>
+    <p>Are you sure you want to delete the movie "{{ movie.title }}"?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirm Delete">
+    </form>
+    
+    <a href="{% url 'movie:index' %}">Cancel</a>
+{% endblock body %}

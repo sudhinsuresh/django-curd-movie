@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}  
+{% load static %}
+
+{% block body %}
+<div class="card" style="width: 18rem;">
+  <img src="{{ movie.image.url }}" class="card-img-top" alt="Movie Image">
+  <div class="card-body">
+    <h5 class="card-title">{{ movie.name }}</h5>
+    <p class="card-text">{{ movie.desc }}</p>
+    <a href="" class="btn btn-danger">Update</a>
+    <a href="{% url 'movie:moviedelete' movie.pk %}" class="btn btn-danger">Delete</a>
+    
+    
+  </div>
+</div>
+{% endblock body %}
